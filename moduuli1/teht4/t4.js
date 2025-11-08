@@ -3,7 +3,7 @@ function getRandomInt(min, max) {
   const maxFloored = Math.floor(max);
   return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled);
 }
-
+const name = prompt('What is your name?');
 const numero = getRandomInt(1, 4);
 let personal_house = '';
 
@@ -17,5 +17,4 @@ if (numero === 1) {
   personal_house = 'Hufflepuff';
 }
 
-console.log('You are a ' + personal_house + '.');
-document.querySelector('#house').innerHTML = 'Your house is ' + personal_house + '!';
+document.querySelector('#house').innerHTML = name + ', your house is ' + personal_house + '!';
