@@ -1,11 +1,11 @@
 const numero = Number(prompt("Anna numero"));
 
-for (let jakaja = 2; jakaja < loppuvuosi; jakaja++) {
-  if (jakaja % 4 === 0) {
-    document.querySelector("#karkausvuodet").innerHTML = lista;
-  }
-
+for (let jakaja = 2; jakaja < numero; jakaja++) {
+    if (numero % jakaja === 0) {
+      document.querySelector("#alkuluku").innerHTML = 'Numero ei ole alkuluku';
+      break;
+    }
   else {
-    document.querySelector("#karkausvuodet").innerHTML = 'Numero on alkuluku';
+    document.querySelector("#alkuluku").innerHTML = 'Numero on alkuluku';
   }
 }
