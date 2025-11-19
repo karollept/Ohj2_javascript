@@ -1,4 +1,5 @@
 'use strict';
+const target = document.getElementById("target");
 const students = [
   {
     name: 'John',
@@ -13,3 +14,10 @@ const students = [
     id: '5423679',
   },
 ];
+
+students.forEach(student => {
+  const vaihtoehto = document.createElement('option');
+  vaihtoehto.value = student.value;
+  vaihtoehto.textContent = student.name;
+  target.appendChild(vaihtoehto);
+});
