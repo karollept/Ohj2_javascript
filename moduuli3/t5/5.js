@@ -93,50 +93,31 @@ const picArray = [
 ];
 
 // add your code here
-
-'use strict';
-const target = document.getElementById("target");
+const section = document.getElementById('pictures');
 
 picArray.forEach(picArr => {
   const articla = document.createElement('article');
-  articla.value = picArr.value;
-  articla.textContent = picArr.name;
+  articla.classList.add('card');
 
   const heading = document.createElement('h2');
-  articla.value = picArr.value;
-  articla.textContent = picArr.name;
+  heading.textContent = picArr.title;
+
+  const figture = document.createElement('figure');
 
   const pic = document.createElement('img');
-  articla.value = picArr.value;
-  articla.textContent = picArr.name;
+  pic.src = picArr.image.medium;
+  pic.alt = picArr.title;
 
   const pic2 = document.createElement('figcaption');
-  articla.value = picArr.value;
-  articla.textContent = picArr.name;
+  pic2.textContent = picArr.caption;
 
   const text = document.createElement('p');
-  articla.value = picArr.value;
-  articla.textContent = picArr.name;
+  text.textContent = picArr.description;
 
-    target.appendChild(articla);
-    target.appendChild(heading);
-    target.appendChild(pic);
-    target.appendChild(pic2);
-    target.appendChild(text);
+    figture.appendChild(pic);
+    figture.appendChild(pic2);
+    articla.appendChild(heading);
+    articla.appendChild(figture);
+    articla.appendChild(text);
+    section.appendChild(articla);
 });
-
-
-Open t5 folder in your IDE / editor.
-    Create multiple < article > elements that contain heading, image,
-    image caption and text and populate them with the data from picArray.
-    Add the articles to the < section > element.
-    The structure of the articles should be this:
-
-<article className="card">
-  <h2>title_from_picArray</h2>
-  <figure>
-    <img src="medium_image_from_picArray" alt="title_from_picArray"/>
-    <figcaption>caption_from_picArray</figcaption>
-  </figure>
-  <p>description_from_picArray</p>
-</article>

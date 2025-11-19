@@ -1,5 +1,3 @@
-Copy content of t5 folder to this folder. Change file names from 5.* to 11.*
-
 'use strict';
 const picArray = [
   {
@@ -95,26 +93,23 @@ const picArray = [
 ];
 
 // add your code here
-const section = document.getElementsById('pictures');
+const section = document.getElementById('pictures');
 const modal = document.getElementById('modal');
-const modal-img = document.getElementById('modal-img');
+const modalimg = document.getElementById('modal-img');
 const close = document.getElementById('close');
-
-'use strict';
-const target = document.getElementById("target");
 
 picArray.forEach(picArr => {
   const articla = document.createElement('article');
   articla.classList.add('card');
 
   const heading = document.createElement('h2');
-  h2.textContent = picArr.title;
+  heading.textContent = picArr.title;
 
-  const ficture = document.createElement('figure');
+  const figture = document.createElement('figure');
 
   const pic = document.createElement('img');
-  pic.src = pic.image.medium;
-  pic.alt = pic.title;
+  pic.src = picArr.image.medium;
+  pic.alt = picArr.title;
 
   const pic2 = document.createElement('figcaption');
   pic2.textContent = picArr.caption;
@@ -122,16 +117,16 @@ picArray.forEach(picArr => {
   const text = document.createElement('p');
   text.textContent = picArr.description;
 
-    section.appendChild(articla);
-    articla.appendChild(heading);
-    articla.appendChild(figture);
     figture.appendChild(pic);
     figture.appendChild(pic2);
+    articla.appendChild(heading);
+    articla.appendChild(figture);
     articla.appendChild(text);
+    section.appendChild(articla);
 
     articla.addEventListener('click', () => {
-      modal-img.src = picArr.image.large;
-      modal-img.alt = picArr.title;
+      modalimg.src = picArr.image.large;
+      modalimg.alt = picArr.title;
       modal.showModal();
     });
 });
