@@ -103,12 +103,20 @@ picArray.forEach(picArr => {
   articla.textContent = picArr.name;
 
   const heading = document.createElement('h2');
+  articla.value = picArr.value;
+  articla.textContent = picArr.name;
 
   const pic = document.createElement('img');
+  articla.value = picArr.value;
+  articla.textContent = picArr.name;
 
   const pic2 = document.createElement('figcaption');
+  articla.value = picArr.value;
+  articla.textContent = picArr.name;
 
   const text = document.createElement('p');
+  articla.value = picArr.value;
+  articla.textContent = picArr.name;
 
     target.appendChild(articla);
     target.appendChild(heading);
