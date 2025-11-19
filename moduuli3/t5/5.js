@@ -94,6 +94,30 @@ const picArray = [
 
 // add your code here
 
+'use strict';
+const target = document.getElementById("target");
+
+picArray.forEach(picArr => {
+  const articla = document.createElement('article');
+  articla.value = picArr.value;
+  articla.textContent = picArr.name;
+
+  const heading = document.createElement('h2');
+
+  const pic = document.createElement('img');
+
+  const pic2 = document.createElement('figcaption');
+
+  const text = document.createElement('p');
+
+    target.appendChild(articla);
+    target.appendChild(heading);
+    target.appendChild(pic);
+    target.appendChild(pic2);
+    target.appendChild(text);
+});
+
+
 Open t5 folder in your IDE / editor.
     Create multiple < article > elements that contain heading, image,
     image caption and text and populate them with the data from picArray.
