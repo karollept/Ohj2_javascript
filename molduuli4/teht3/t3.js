@@ -4,17 +4,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultsDiv = document.getElementById("results");
 
   form.addEventListener("submit", event => {
-    event.preventDefault(); // Stop the browser from navigating away
+    event.preventDefault();
 
-    const query = input.value.trim(); // Use the actual input field
+    const query = input.value.trim();
     if (!query) {
       console.log("Please enter a TV show name.");
       return;
     }
 
-    const url = `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`;
+    const linkki = `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`;
 
-    fetch(url)
+    fetch(linkki)
       .then(response => {
         if (!response.ok) throw new Error("Network error");
         return response.json();
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.clear();
         console.log(data);
 
-        resultsDiv.innerHTML = ""; // Clear old results
+        resultsDiv.innerHTML = "";
 
         data.forEach(tvShow => {
           const show = tvShow.show;
